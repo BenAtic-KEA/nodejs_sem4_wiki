@@ -10,7 +10,11 @@ export function renderPage(path, options = {tabTitle : "wiki", cssLink:""}){
             .replace("%%PAGE_CSS_LINK%%", options.cssLink)
             + page
             + footerComponent;
-}  
+}
+
+export function readPage(path){
+    return fs.readFileSync("./public/pages"+ path).toString();
+}
 
 export function injectData(pageString, data){
     const brokenUpHTML = pageString.split("</body>");

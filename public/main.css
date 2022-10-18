@@ -1,6 +1,7 @@
 main {
     background-color: wheat;
 }
-body {
-    font-family:ui-sans-serif;
+
+:root {
+    --bs-body-font-family: sans-serif; 
 }

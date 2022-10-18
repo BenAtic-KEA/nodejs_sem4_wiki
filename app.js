@@ -1,9 +1,12 @@
 import express from "express";
-import { renderPage } from "./util/templateEngine.js";
-
+import  {renderPage, readPage}  from "./util/templateEngine.js";
+import loginRouter from "./routers/loginRouter.js"
+import bodyParser from "body-parser";
 const app = express();
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static("public"))
+app.use(loginRouter);
 
 // app.use(<routername>) for routers
 
@@ -12,7 +15,7 @@ const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJ
 
 //Login
 const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css"});
-
+const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: ""});
 // NPM tabs:
 const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:""});
 const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:""});
@@ -23,7 +26,6 @@ const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetc
 const variablesAndFunctionsPage = renderPage("/javascriptTopics/variablesAndFunctions/variablesAndFunctions.html", {tabTitle: "Variables & Fuctiosn", cssLink:""});
 const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", {tabTitle: "REST API", cssLink:""});
 const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", {tabTitle: "Server & Client side Rendering", cssLink:""});
-
 
 app.get("/",(req,res) => {
     res.send(frontpagePage);
@@ -60,6 +62,10 @@ app.get("/terminal-commands", (req,res) => {
 app.get("/npm-tools", (req,res) => {
     res.send(toolsPage);
 });
+
+app.get("/error401", (req,res) => {
+    res.send(loginFailPage)
+})
 
 
 
