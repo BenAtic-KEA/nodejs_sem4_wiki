@@ -17,7 +17,7 @@ const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJ
 const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css"});
 const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: ""});
 // NPM tabs:
-const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:""});
+const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css"});
 const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:""});
 const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:""});
 

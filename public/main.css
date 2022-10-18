@@ -1,5 +1,12 @@
-main {
+main{
     background-color: wheat;
+}
+body{
+    background-color: wheat !important;
+}
+
+.box-border {
+    border-radius: 25px;
 }
 
 :root {
