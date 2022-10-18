@@ -1,6 +1,6 @@
 import express from "express";
 import  {renderPage, readPage}  from "./util/templateEngine.js";
-import loginRouter from "./routers/loginRouter.js"
+import loginRouter from "./routers/adminRouter.js"
 import bodyParser from "body-parser";
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
