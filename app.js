@@ -11,7 +11,7 @@ app.use(express.static("public"))
 const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css"});
 
 //Login
-const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: ""});
+const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css"});
 
 // NPM tabs:
 const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:""});
