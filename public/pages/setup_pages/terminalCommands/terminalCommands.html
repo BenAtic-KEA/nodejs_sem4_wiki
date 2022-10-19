@@ -1,18 +1,145 @@
 <div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h1>Sign in</h1>
+        <div class="col d-flex justify-content-center pt-2">
+            <h3>Terminal commands</h3>  
         </div>
     </div>
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h6>SubTitle</h6> 
+        <div class="col d-flex justify-content-center pt-2">
+            <p>In this first section you will be able to see the most used commands for different tools</p>
         </div>
     </div>
-    <br>
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <p>Content</p>
+        <div class="col-3 mt-1 w-100">
+            <div class="row">
+
+                <div class="col-11 d-flex justify-content-center">
+                    <h5>Git</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 pb-2 mt-2 bg-dark">
+<pre><code>
+<span class="comment"># New repository</span>
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin [URL]
+git push -u origin main
+<span class="comment"># Add all changes</span> 
+git add .
+<span class="comment"># Commit all added changes</span> 
+git commit -m "my message"
+<span class="comment"># Push commit to repository</span>
+git push
+<span class="comment"># Pull changes from repository</span>
+git pull
+<span class="comment"># Help </span>
+git help
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mt-1 w-100">
+            <div class="row">
+
+                <div class="col-11 d-flex justify-content-center">
+                    <h5>NPM</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 pb-2 mt-2 bg-dark">
+<pre><code>
+<span class="comment"># Version</span>
+npm version
+<span class="comment"># install dependencies</span>
+npm i [package name]
+<span class="comment"># Run Script </span>
+npm run [script name]
+<span class="comment"># Help </span>
+npm help
+</code></pre>
+                </div>
+            </div>
+        </div>    
+        <div class="col-3 mt-1 w-100">
+            <div class="row">
+
+                <div class="col-11 d-flex justify-content-center">
+                    <h5>NodeJS</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 pb-2 mt-2 bg-dark">
+<pre><code>
+<span class="comment"># Open NodeJS shell</span>
+node
+<span class="comment"># Run project</span>
+node app.js
+<span class="comment"># Help </span>
+node
+.help
+</code></pre>
+                </div>
+            </div>
+        </div>    
+        <div class="col-3 mt-1">
+            <div class="row">
+
+                <div class="col-11 d-flex justify-content-center">
+                    <h5>Nodemon</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 pb-2 mt-2 bg-dark">
+<pre><code>
+<span class="comment"># Run project</span>
+nodemon app.js
+<span class="comment"># Help </span>
+nodemon -h
+</code></pre>
+                </div>
+            </div>
+        </div>    
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <h3>Scripts</h3>
+            </div>
+        </div>
+        <div class="row box-border border-shadow-style">
+                <div class="col box-border border-shadow-style">
+                   
+                    <div class="row p-3">
+                        <div class="col-6">
+                            <p>Scripts are used for different purposes. Normally its used to secure that anyone who try to run the project will get the right environments or other modification at start. </p>
+                            <p>A common use is to make a "dev" script which is running with "nodemon" and some local environments</p>
+                            <p>This is because nodemon is a dev tool which redeploy your project after every change in specified files</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-11 d-flex justify-content-center">
+                                    <h5>Example of a script:</h5>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-1"></div>
+                                <div class="col-11 bg-dark">
+<pre>
+<code>
+"scripts": {
+    "start-dev": "cross-env PORT=8080 nodemon app.js",
+    "start-prod": "node app.js"
+    }
+</code>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
