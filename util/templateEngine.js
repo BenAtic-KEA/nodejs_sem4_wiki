@@ -3,11 +3,12 @@ import fs from "fs";
 const navComponent  = fs.readFileSync("./public/components/navbar/navbar.html").toString();
 const footerComponent = fs.readFileSync("./public/components/footer/footer.html").toString();
 
-export function renderPage(path, options = {tabTitle : "wiki", cssLink:""}){
+export function renderPage(path, options = {tabTitle : "wiki", cssLink:"", tabTitleHeader: "NodeJs"}){
         const page = fs.readFileSync("./public/pages"+ path).toString();
         return navComponent
             .replace("%%TAB_TITLE%%", options.tabTitle)
             .replace("%%PAGE_CSS_LINK%%", options.cssLink)
+            .replace("%%TAB_TITLE_HEADER%%", options.tabTitleHeader)
             + page
             + footerComponent;
 }

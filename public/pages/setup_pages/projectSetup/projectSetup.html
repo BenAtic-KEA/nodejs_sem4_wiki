@@ -7,10 +7,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <h5>You need to download following to get started:</h5>
+                <div class="col-6 d-flex justify-content-center">
+                    <h5>Need to have:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex justify-content-center">
                     <h5>Nice to have</h5>
                 </div>
             </div>
@@ -18,22 +18,21 @@
                 <div class="col-6">
                     <ul>
                         <li>
-                            <a href="https://nodejs.org/en/">NodeJS</a>
+                            <p><a href="https://nodejs.org/en/">NodeJS</a> - for Javascript in Backend</p>
                         </li>
                         <li>
-                            <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> Npm </a>
+                            <p><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> Npm</a> - Node package manager</p>
+                        </li>
+                        <li>
+                            <p><a href="https://www.npmjs.com/package/express">Express</a> - Effective tool for HTTP servers</p>
                         </li>
                     </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex justify-content-center">
                     <ul>
                         <li>
                             <p><a
                                 href="https://www.npmjs.com/package/nodemon">Nodemon</a> - Quickly see changes in development</p>
-                        </li>
-
-                        <li>
-                            <p><a href="https://www.npmjs.com/package/express">Express</a> - Effective tool for HTTP servers</p>
                         </li>
                     </ul>
                 </div>
@@ -71,6 +70,64 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-3 pt-2 border-shadow-style box-border">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h3>Step 1</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Create package.json with {} brackets and do following terminal commands:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pt-2 pb-2 bg-dark">
+                        <span>
+                            <code>
+                              npm i express
+                            </code>
+                        </span>      
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        After installing express you have to open the package.json and apply type: "module" as following:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pb-2 mt-2 bg-dark">
+<pre><code>
+{
+    "type": "module",
+    "dependencies": {
+        "express": "^4.18.2",
+    }
+}
+</code></pre>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-1 pt-2 d-flex justify-content-center"><h1 class="arrow">&#8594</h1></div>
+            <div class="col-4 pt-2 border-shadow-style box-border">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h3>Step 2</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 pt-2 d-flex justify-content-center"><h1 class="arrow">&#8594</h1></div>
+            <div class="col-3 pt-2 border-shadow-style box-border">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h3>Step 3</h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row mt-5">
                 <div class="col pt-2 border-shadow-style box-border">

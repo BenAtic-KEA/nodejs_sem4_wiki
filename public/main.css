@@ -12,3 +12,12 @@ body{
 :root {
     --bs-body-font-family: sans-serif; 
 }
+
+.box-border-bottom {
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
+}
+
+pre code {
+    color:#e83e8c !important;
+}

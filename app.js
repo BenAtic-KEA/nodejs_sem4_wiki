@@ -11,21 +11,21 @@ app.use(loginRouter);
 // app.use(<routername>) for routers
 
 //Frontpage
-const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css"});
+const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css", tabTitleHeader:"NodeJS"});
 
 //Login
-const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css"});
-const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: ""});
+const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css", tabTitleHeader:"NodeJS"});
+const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: "", tabTitleHeader:"NodeJS"});
 // NPM tabs:
-const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css"});
-const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:""});
-const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:""});
+const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"});
+const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"});
+const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"", tabTitleHeader:"Tools"});
 
 // Javascript tabs:
-const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetchAndRedirect.html",{tabTitle: "Fetch & Redirect", cssLink: ""});
-const variablesAndFunctionsPage = renderPage("/javascriptTopics/variablesAndFunctions/variablesAndFunctions.html", {tabTitle: "Variables & Fuctiosn", cssLink:""});
-const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", {tabTitle: "REST API", cssLink:""});
-const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", {tabTitle: "Server & Client side Rendering", cssLink:""});
+const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetchAndRedirect.html",{tabTitle: "Fetch & Redirect", cssLink: "", tabTitleHeader:"Fetch & Redirect"});
+const variablesAndFunctionsPage = renderPage("/javascriptTopics/variablesAndFunctions/variablesAndFunctions.html", {tabTitle: "Variables & Fuctiosn", cssLink:"", tabTitleHeader:"Variables & Functions"});
+const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", {tabTitle: "REST API", cssLink:"", tabTitleHeader:"REST API"});
+const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", {tabTitle: "Server & Client side Rendering", cssLink:"", tabTitleHeader:"SSR & CSR"});
 
 app.get("/",(req,res) => {
     res.send(frontpagePage);
