@@ -1,18 +1,78 @@
 <div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h1>Sign in</h1>
+        <div class="col border-shadow-style m-2 box-border">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h1>Functions</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 m-4">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h5>Callback functions</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>A callback function is a function passed as an argument to another function.</p>
+                            <p>This makes it possible for a function to call another function.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h6>Example:</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col bg-dark">
+                            <pre><code>
+function genericActionExecutor(callbackFunction, name){
+    <span class="comment">// execute some code</span>
+    return callbackFunction(name);
+}
+
+const spitting = (name) => `${name} is spitting.`;
+
+
+console.log(genericActionExecutor(spitting,"Mark"));
+<span class="comment">// prints: Mark is spitting.</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 m-4">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h5>Arrow Functions</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>A arrow function makes it possible to write functions cleaner than a regular function</p>
+                            <p>It makes it possible to make one liners</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h6>Example:</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col bg-dark">
+                            <pre><code>
+function gActionExecutor(callbackFunction, name){
+    <span class="comment">// execute some code</span>
+    return callbackFunction(name);
+}
+
+gActionExecutor((name) => `${name} is running away.`,"Mark");
+<span class="comment">// this prints out Mark is running away</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h6>SubTitle</h6> 
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <p>Content</p>
-        </div>
-    </div>
-</div>

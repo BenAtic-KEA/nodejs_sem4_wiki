@@ -19,7 +19,7 @@ const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login 
 // NPM tabs:
 const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"});
 const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"});
-const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"", tabTitleHeader:"Tools"});
+const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"pages/setup_pages/tools/tools.css", tabTitleHeader:"Tools"});
 
 // Javascript tabs:
 const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetchAndRedirect.html",{tabTitle: "Fetch & Redirect", cssLink: "", tabTitleHeader:"Fetch & Redirect"});
