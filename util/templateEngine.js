@@ -9,6 +9,7 @@ export function renderPage(path, options = {tabTitle : "wiki", cssLink:"", tabTi
             .replace("%%TAB_TITLE%%", options.tabTitle)
             .replace("%%PAGE_CSS_LINK%%", options.cssLink)
             .replace("%%TAB_TITLE_HEADER%%", options.tabTitleHeader)
+            .replace("%%TAB_TITLE_HEADER%%", options.tabTitleHeader)
             + page
             + footerComponent;
 }

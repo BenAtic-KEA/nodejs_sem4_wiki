@@ -4,6 +4,7 @@ const router = Router();
 router.post("/api/login",(req,res) => {
 
     if(req.body.username === "admin" && req.body.password === "admin"){
+        res.cookie("admin",true,{httpOnly: true});
         res.redirect("/");
     }else {
         res.redirect("/error401");

@@ -1,6 +1,55 @@
 <div class="container">
     <div class="row">
         <div class="col border-shadow-style m-2 box-border">
+            <div class="d-flex justify-content-center">
+                <h1>Variables</h1>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h5>Const and let</h5>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <p>When using variables its important to make the correct definition</p>
+                    <p>As a golden rule, if its possible always use "const" over "let"</p>
+                    <ul>
+                        <li>
+                            Const
+                        </li>
+                        <ul>
+                            <li>
+                                Always needs a declaration value
+                            </li>
+                            <li>
+                                Cant change through redeclaration or reassignment
+                            </li>
+                            <li>
+                                If its a object or array, properties or items can be updated or removed
+                            </li>
+                        </ul>
+                        <li>
+                            let
+                        </li>
+                        <ul>
+                            <li>
+                                Can be declared without a value
+                            </li>
+                            <li>
+                                Can be changed through redeclaration or reassignment
+                            </li>
+                            <li>
+                                its possible to override the value for a subscope
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col border-shadow-style m-2 box-border">
             <div class="row">
                 <div class="col d-flex justify-content-center">
                     <h1>Functions</h1>
@@ -76,3 +125,4 @@ gActionExecutor((name) => `${name} is running away.`,"Mark");
             </div>
         </div>
     </div>
+</div>

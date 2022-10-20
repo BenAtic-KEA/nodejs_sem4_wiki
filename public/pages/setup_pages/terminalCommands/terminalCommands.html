@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col d-flex justify-content-center pt-2">
-            <h3>Terminal commands</h3>  
+            <h3>Terminal commands</h3>
         </div>
     </div>
     <div class="row">
@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-11 pb-2 mt-2 bg-dark">
-<pre><code>
+                    <pre><code>
 <span class="comment"># New repository</span>
 git init
 git add README.md
@@ -50,7 +50,7 @@ git help
             </div>
             <div class="row">
                 <div class="col-11 pb-2 mt-2 bg-dark">
-<pre><code>
+                    <pre><code>
 <span class="comment"># Version</span>
 npm version
 <span class="comment"># install dependencies</span>
@@ -62,7 +62,7 @@ npm help
 </code></pre>
                 </div>
             </div>
-        </div>    
+        </div>
         <div class="col-3 mt-1 w-100">
             <div class="row">
 
@@ -72,7 +72,7 @@ npm help
             </div>
             <div class="row">
                 <div class="col-11 pb-2 mt-2 bg-dark">
-<pre><code>
+                    <pre><code>
 <span class="comment"># Open NodeJS shell</span>
 node
 <span class="comment"># Run project</span>
@@ -83,7 +83,7 @@ node
 </code></pre>
                 </div>
             </div>
-        </div>    
+        </div>
         <div class="col-3 mt-1">
             <div class="row">
 
@@ -93,7 +93,7 @@ node
             </div>
             <div class="row">
                 <div class="col-11 pb-2 mt-2 bg-dark">
-<pre><code>
+                    <pre><code>
 <span class="comment"># Run project</span>
 nodemon app.js
 <span class="comment"># Help </span>
@@ -101,33 +101,36 @@ nodemon -h
 </code></pre>
                 </div>
             </div>
-        </div>    
         </div>
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <h3>Scripts</h3>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h3>Scripts</h3>
         </div>
-        <div class="row box-border border-shadow-style">
-                <div class="col box-border border-shadow-style">
-                   
-                    <div class="row p-3">
-                        <div class="col-6">
-                            <p>Scripts are used for different purposes. Normally its used to secure that anyone who try to run the project will get the right environments or other modification at start. </p>
-                            <p>A common use is to make a "dev" script which is running with "nodemon" and some local environments</p>
-                            <p>This is because nodemon is a dev tool which redeploy your project after every change in specified files</p>
+    </div>
+    <div class="row box-border border-shadow-style">
+        <div class="col box-border border-shadow-style">
+
+            <div class="row p-3">
+                <div class="col-6">
+                    <p>Scripts are used for different purposes. Normally its used to secure that anyone who try to run
+                        the project will get the right environments or other modification at start. </p>
+                    <p>A common use is to make a "dev" script which is running with "nodemon" and some local
+                        environments</p>
+                    <p>This is because nodemon is a dev tool which redeploy your project after every change in specified
+                        files</p>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11 d-flex justify-content-center">
+                            <h5>Example of a script:</h5>
                         </div>
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-11 d-flex justify-content-center">
-                                    <h5>Example of a script:</h5>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-1"></div>
-                                <div class="col-11 bg-dark">
-<pre>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-1"></div>
+                        <div class="col-11 bg-dark">
+                            <pre>
 <code>
 "scripts": {
     "start-dev": "cross-env PORT=8080 nodemon app.js",
@@ -135,7 +138,6 @@ nodemon -h
     }
 </code>
 </pre>
-                            </div>
                         </div>
                     </div>
                 </div>

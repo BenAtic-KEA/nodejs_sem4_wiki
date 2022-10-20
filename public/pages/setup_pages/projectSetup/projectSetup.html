@@ -21,18 +21,20 @@
                             <p><a href="https://nodejs.org/en/">NodeJS</a> - for Javascript in Backend</p>
                         </li>
                         <li>
-                            <p><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> Npm</a> - Node package manager</p>
+                            <p><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> Npm</a> -
+                                Node package manager</p>
                         </li>
                         <li>
-                            <p><a href="https://www.npmjs.com/package/express">Express</a> - Effective tool for HTTP servers</p>
+                            <p><a href="https://www.npmjs.com/package/express">Express</a> - Effective tool for HTTP
+                                servers</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                     <ul>
                         <li>
-                            <p><a
-                                href="https://www.npmjs.com/package/nodemon">Nodemon</a> - Quickly see changes in development</p>
+                            <p><a href="https://www.npmjs.com/package/nodemon">Nodemon</a> - Quickly see changes in
+                                development</p>
                         </li>
                     </ul>
                 </div>
@@ -66,38 +68,38 @@
                     <p>Npm(Node Package Manager) is a package manager tool, which by default is used for NodeJS.</p>
                     <p>To interact with npm we make use of different <a href="/terminal-commands">Terminal commands</a>
                         so we can install different packages/dependencies</p>
-                        <p></p>
-                    </div>
+                    <p></p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 pt-2 border-shadow-style box-border h-100">
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <h3>Step 1</h3>
-                    </div>
+    </div>
+    <div class="row">
+        <div class="col-3 pt-2 border-shadow-style box-border h-100">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h3>Step 1</h3>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Create package.json with {} brackets and do following terminal commands:</p>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Create package.json with {} brackets and do following terminal commands:</p>
                 </div>
-                <div class="row">
-                    <div class="col pt-2 pb-2 bg-dark">
-                        <code>
+            </div>
+            <div class="row">
+                <div class="col pt-2 pb-2 bg-dark">
+                    <code>
                             npm i express
                         </code>
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        After installing express you have to open the package.json and apply type: "module" as following:
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    After installing express you have to open the package.json and apply type: "module" as following:
                 </div>
-                <div class="row">
-                    <div class="col pb-2 mt-2 bg-dark">
-<pre><code>
+            </div>
+            <div class="row">
+                <div class="col pb-2 mt-2 bg-dark">
+                    <pre><code>
 {
     "type": "module",
     "dependencies": {
@@ -105,27 +107,29 @@
     }
 }
 </code></pre>
-                    </div>
                 </div>
-                <br>
             </div>
-            <div class="col-1 pt-2 d-flex justify-content-center align-content-center flex-wrap"><h1 class="arrow">&#8594</h1></div>
-            <div class="col-4 pt-2 border-shadow-style box-border h-100">
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <h3>Step 2</h3>
-                    </div>
+            <br>
+        </div>
+        <div class="col-1 pt-2 d-flex justify-content-center align-content-center flex-wrap">
+            <h1 class="arrow">&#8594</h1>
+        </div>
+        <div class="col-4 pt-2 border-shadow-style box-border h-100">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h3>Step 2</h3>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Now you're ready to add app.js in the root of the project.</p>
-                        <p>app.js with express is our way to get requests from a user</p>
-                        <p>So now we import express by using the type "module" and setup following:</p>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Now you're ready to add app.js in the root of the project.</p>
+                    <p>app.js with express is our way to get requests from a user</p>
+                    <p>So now we import express by using the type "module" and setup following:</p>
                 </div>
-                        <div class="row">
-                            <div class="col pb-2 mt-2 bg-dark">
-<pre>
+            </div>
+            <div class="row">
+                <div class="col pb-2 mt-2 bg-dark">
+                    <pre>
 <code>
 import express from "express";
 const app = express();
@@ -142,49 +146,52 @@ app.listen(PORT, (error)=> {
         ,PORT)
 })
 </code></pre>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col pt-2">
-                        <ul>
-                            <li>
-                                <p>To secure whats public for the client we make a "public" folder and set this as the location through express.static("public")</p>
-                            </li>
-                            <li>
-                                <p>In the end we define which Port to listen to, when our application is live</p>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
-            <div class="col-1 pt-2 d-flex justify-content-center align-content-center flex-wrap"><h1 class="arrow">&#8594</h1></div>
-            <div class="col-3 pt-2 border-shadow-style box-border h-100">
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <h3>Step 3</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>these few steps should make you ready to start your coding</p>
-                        <p>And your explorer should now look like this:</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <img src="images/setup_pages_img/explorer_setup.jpg" alt="explorer in vs code">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col d-flex justify-content-center pt-2 pb-2">
-                        <h5>You now have a basic setup so start coding!</h5>
-                    </div>
+            <div class="row">
+                <div class="col pt-2">
+                    <ul>
+                        <li>
+                            <p>To secure whats public for the client we make a "public" folder and set this as the
+                                location through express.static("public")</p>
+                        </li>
+                        <li>
+                            <p>In the end we define which Port to listen to, when our application is live</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
         </div>
-        <div class="row mt-5">
-                <div class="col pt-2 border-shadow-style box-border">
+        <div class="col-1 pt-2 d-flex justify-content-center align-content-center flex-wrap">
+            <h1 class="arrow">&#8594</h1>
+        </div>
+        <div class="col-3 pt-2 border-shadow-style box-border h-100">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h3>Step 3</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>these few steps should make you ready to start your coding</p>
+                    <p>And your explorer should now look like this:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="images/setup_pages_img/explorer_setup.jpg" alt="explorer in vs code">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center pt-2 pb-2">
+                    <h5>You now have a basic setup so start coding!</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col pt-2 border-shadow-style box-border">
             <div class="row">
                 <div class="col d-flex justify-content-center">
                     <h3>Good to know!</h3>
@@ -192,7 +199,8 @@ app.listen(PORT, (error)=> {
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-center">
-                    <p>When getting packages through npm always confirm its the right one. one way is to look at following.</p>
+                    <p>When getting packages through npm always confirm its the right one. one way is to look at
+                        following.</p>
                 </div>
             </div>
             <div class="row pt-2">
