@@ -1,5 +1,5 @@
 import express from "express";
-import  {renderPage, readPage}  from "./util/templateEngine.js";
+import  {renderPage}  from "./util/templateEngine.js";
 import loginRouter from "./routers/adminRouter.js"
 import bodyParser from "body-parser";
 const app = express();
@@ -10,75 +10,168 @@ app.use(loginRouter);
 
 // app.use(<routername>) for routers
 
-//Frontpage
-//const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css", tabTitleHeader:"NodeJS"});
+export const adminMessages = {
+    frontpagePage: [],
+    loginPage:[],
+    projectSetupPage:[],
+    terminalCommandsPage:[],
+    toolsPage:[],
+    fetchAndRedirectPage: [],
+    variablesAndFunctionsPage: [],
+    restAPIPage: [],
+    SSRandCSRPage: []
+}
+
+function isAdmin(req){
+    if(req.headers.cookie){
+        return req.headers.cookie.indexOf("admin=true") > -1        
+    }
+    return false
+}
 
 //Login
-const loginPage = renderPage("/loginpage/login.html", {tabTitle: "Login / Signup", cssLink: "pages/loginPage/login.css", tabTitleHeader:"NodeJS"});
 const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: "", tabTitleHeader:"NodeJS"});
 // NPM tabs:
 const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"});
+const projectSetupPageIsAdmin = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"},true);
 const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"});
+const terminalCommandsPageIsAdmin = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"},true);
 const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"pages/setup_pages/tools/tools.css", tabTitleHeader:"Tools"});
+const toolsPageIsAdmin = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"pages/setup_pages/tools/tools.css", tabTitleHeader:"Tools"},true);
 
-// Javascript tabs:
-const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetchAndRedirect.html",{tabTitle: "Fetch & Redirect", cssLink: "", tabTitleHeader:"Fetch & Redirect"});
-const variablesAndFunctionsPage = renderPage("/javascriptTopics/variablesAndFunctions/variablesAndFunctions.html", {tabTitle: "Variables & Fuctiosn", cssLink:"", tabTitleHeader:"Variables & Functions"});
-const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", {tabTitle: "REST API", cssLink:"", tabTitleHeader:"REST API"});
-const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", {tabTitle: "Server & Client side Rendering", cssLink:"", tabTitleHeader:"SSR & CSR"});
-
+//Frontpage Page
 app.get("/",(req,res) => {
-    if(req.headers.cookie){
-        let isAdmin = req.headers.cookie.indexOf("admin=true") > -1
+    
+    const options = {
+        tabTitle : "NodeJs helper", 
+        cssLink : "pages/frontpage/frontpage.css", 
+        tabTitleHeader: "NodeJS",
+        isAdmin: isAdmin(req),
+        pagename: "frontpagePage",
+        messages: adminMessages.frontpagePage
     }
     
-    const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css", tabTitleHeader:"NodeJS"});
+    const frontpagePage = renderPage("/frontpage/frontpage.html", options);
     res.send(frontpagePage);
 });
 
+//login Page
 app.get("/login", (req,res) =>{
+    const options = {
+        tabTitle : "Login", 
+        cssLink : "pages/loginPage/login.css", 
+        tabTitleHeader: "NodeJS",
+        isAdmin: isAdmin(req),
+        pagename: "loginPage",
+        messages: adminMessages.loginPage
+    }
+    const loginPage = renderPage("/loginpage/login.html",options)
     res.send(loginPage);
 });
 
+//Fetch And Redirect Page
 app.get("/fetchAndRedirect", (req,res) =>{
+    const options = {
+        tabTitle : "Fetch & Redirect", 
+        cssLink : "", 
+        tabTitleHeader: "Fetch & Redirect",
+        isAdmin: isAdmin(req),
+        pagename: "fetchAndRedirectPage",
+        messages: adminMessages.fetchAndRedirectPage
+    }
+    const fetchAndRedirectPage = renderPage("/javascriptTopics/FetchAndRedirect/fetchAndRedirect.html",options);
+
     res.send(fetchAndRedirectPage);
 });
 
+// Variables and Functions Page
 app.get("/variablesAndFunctions", (req,res) => {
+    const options = {
+        tabTitle : "Variables & Fuctiosn", 
+        cssLink : "", 
+        tabTitleHeader: "Variables & Functions",
+        isAdmin: isAdmin(req),
+        pagename: "variablesAndFunctionsPage",
+        messages: adminMessages.variablesAndFunctionsPage
+    }
+    const variablesAndFunctionsPage = renderPage("/javascriptTopics/variablesAndFunctions/variablesAndFunctions.html", options);
     res.send(variablesAndFunctionsPage);
 });
 
+// REST API Page
 app.get("/RestAPI", (req,res) => {
+    const options = {
+        tabTitle : "REST API", 
+        cssLink : "", 
+        tabTitleHeader: "REST API",
+        isAdmin: isAdmin(req),
+        pagename: "restAPIPage",
+        messages: adminMessages.restAPIPage
+    }
+
+    const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", options);
     res.send(restAPIPage);
 });
 
+// SSR & CSR Page
 app.get("/SSR-CSR", (req,res) => {
+    const options = {
+        tabTitle : "Server & Client side Rendering", 
+        cssLink : "", 
+        tabTitleHeader: "SSR & CSR",
+        isAdmin: isAdmin(req),
+        pagename: "SSRandCSRPage",
+        messages: adminMessages.SSRandCSRPage
+    }
+    const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", options);
     res.send(SSRandCSRPage);
 });
 
+// Project Setup Page
 app.get("/projectSetup", (req,res) => {
+    const options = {
+        tabTitle : "Project setup", 
+        cssLink : "pages/setup_pages/projectSetup/projectSetup.css", 
+        tabTitleHeader: "Project Setup",
+        isAdmin: isAdmin(req),
+        pagename: "projectSetupPage",
+        messages: adminMessages.projectSetupPage
+    }
+    const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", options);
     res.send(projectSetupPage);
 });
 
+// Terminal Commands Page
 app.get("/terminal-commands", (req,res) => {
+    const options = {
+        tabTitle : "Terminal Commands", 
+        cssLink : "", 
+        tabTitleHeader: "Terminal",
+        isAdmin: isAdmin(req),
+        pagename: "terminalCommandsPage",
+        messages: adminMessages.terminalCommandsPage
+    }
+    const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", options);
     res.send(terminalCommandsPage);
 });
 
-app.get("/npm-tools", (req,res) => {
+// Tools
+app.get("/tools", (req,res) => {
+    const options = {
+        tabTitle : "NPM tools", 
+        cssLink : "pages/setup_pages/tools/tools.css", 
+        tabTitleHeader: "Tools",
+        isAdmin: isAdmin(req),
+        pagename: "toolsPage",
+        messages: adminMessages.toolsPage
+    }
+    const toolsPage = renderPage("/setup_pages/tools/tools.html", options);
     res.send(toolsPage);
 });
 
 app.get("/error401", (req,res) => {
     res.send(loginFailPage)
 })
-
-
-
-
-
-
-
-
 
 
 const PORT = process.env.PORT || 8080;

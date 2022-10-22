@@ -30,3 +30,7 @@ pre code {
 .comment{
     color:rgb(2, 167, 2);
 }
+
+.border-style-left {
+    border-left-style: groove;
+}

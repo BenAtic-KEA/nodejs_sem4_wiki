@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { adminMessages } from "../app.js";
 const router = Router();
 
 router.post("/api/login",(req,res) => {
@@ -9,6 +10,11 @@ router.post("/api/login",(req,res) => {
     }else {
         res.redirect("/error401");
     }   
+})
+
+router.post("/api/sidebar/message", (req,res) => {
+        adminMessages[req.body.page].push(req.body.message)
+        res.redirect(req.headers.referer)
 })
 
 export default router;

@@ -1,0 +1,19 @@
+<div class="col-2 border-style-left">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h3>Admin SiteNotes</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="message-div">%%messages%%</div>       
+            <form action="/api/sidebar/message" method="POST">
+                <input type="hidden" value="%%pagename%%" name="page">
+                <label for="admin-message">Message</label>
+                <textarea name="message" cols="30" rows="10" id="admin-message"></textarea>
+                <button class="btn btn-secondary" id="sidebar-submit-msg">Save message</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
