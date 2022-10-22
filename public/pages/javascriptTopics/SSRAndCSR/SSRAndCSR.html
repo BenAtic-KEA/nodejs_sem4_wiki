@@ -1,18 +1,50 @@
 <div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h1>Sign in</h1>
+        <div class="col border-shadow-style box-border p-4 m-2 h-100">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h3>Server Side Rendering</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        This site is made from SSR, which means the DOM is send in its final form
+                    </p>
+                    <p>
+                        When using SSR your server handle all the work before sending the dom, 
+                        this can be effective because you only rely on your server internet connection and not the clients
+                    </p>
+                    <p>
+                        The downside is that the server has to redo all the rendering for each request,
+                        this can be a challenge for the server if your suddenly get alot of traffic that could increase the loadtime.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col border-shadow-style box-border p-4 m-2 h-100">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h3>Client Side Rendering</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        With CSR you make the client render the site.
+                    </p>
+                    <p>
+                        This is done by the server only sending a single HTML file,
+                        in which your client will fetch all the JavaScript and compile it in the browser.    
+                    </p>
+                    <p>
+                        The problem can be that the rendering rely on the clients internet and that could reduce the speed of the rendering.
+                        Since the clients internet connection is a unknown factor you cant control.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h6>SubTitle</h6> 
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <p>Content</p>
-        </div>
-    </div>
+    
 </div>
