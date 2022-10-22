@@ -1,18 +1,124 @@
 <div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h1>Sign in</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <h6>SubTitle</h6> 
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <p>Content</p>
+        <div class="col">
+            <div class="row">
+                <div class="col-5 border-shadow-style box-border p-4 m-2 h-100">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h3>Fetch</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Fetch is used to request data from a Api/server, and returns data in JSON or XML
+                                    </p>
+                                    <p>Fetch only requires a 'URL' to request an server and returns a Promise
+                                        <br>
+                                        There is different options you can add to the Fetch call to specify what action
+                                        you intend to do. By default its a GET request
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <h6>Example:</h6>
+                                </div>
+                            </div>
+                            <div class="row m-2">
+                                <div class="col bg-dark">
+                                    <pre><code>
+                    <span class="comment">// Get request</span>
+fetch("URL")
+.then(response => response.json())
+.then((result)=> {
+    console.log(result)
+}
+                    <span class="comment">// Post request</span>
+fetch("URL", {
+<span class="comment">// Kind of request</span>
+    method: 'POST'
+<span class="comment">// Data type</span>
+    headers: {
+      'Content-Type': 'application/json',
+    },
+<span class="comment">// body</span>
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
+});
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 border-shadow-style box-border p-4 m-2 h-100">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <h3>Redirect</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Redirection is a way to forwarding a client from requested URL to another URL.
+                                    </p>
+                                    <p>From a SEO perspective would you always aim for Server-side redirection, so you
+                                        are able to control
+                                        what information you are sending to the client</p>
+                                    <p>There is 2 kinds of redirection: </p>
+                                    <ul>
+                                        <li>
+                                            Server-side redirection
+                                            <ul>
+                                                <li>
+                                                    <p>
+                                                        Server side redirects will be tracked through 30x http status
+                                                        codes.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        The server determines what URL the client need to be sent to and
+                                                        is NOT handled by the browser.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            Client-side redirection
+                                            <ul>
+                                                <li>
+                                                    <p>
+                                                        redirects is handle by the browser, and is often injected
+                                                        through
+                                                        HTML or Javascript.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        Often used as a way to update your URL (redirect to the same
+                                                        url)
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
