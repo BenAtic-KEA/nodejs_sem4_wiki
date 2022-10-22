@@ -28,7 +28,9 @@ const restAPIPage = renderPage("/javascriptTopics/RestAPI/restAPI.html", {tabTit
 const SSRandCSRPage = renderPage("/javascriptTopics/SSRAndCSR/SSRAndCSR.html", {tabTitle: "Server & Client side Rendering", cssLink:"", tabTitleHeader:"SSR & CSR"});
 
 app.get("/",(req,res) => {
-    let isAdmin = req.headers.cookie.indexOf("admin=true") > -1
+    if(req.headers.cookie){
+        let isAdmin = req.headers.cookie.indexOf("admin=true") > -1
+    }
     
     const frontpagePage = renderPage("/frontpage/frontpage.html", {tabTitle : "NodeJs helper", cssLink : "pages/frontpage/frontpage.css", tabTitleHeader:"NodeJS"});
     res.send(frontpagePage);
