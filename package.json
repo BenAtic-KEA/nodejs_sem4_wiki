@@ -11,3 +11,5 @@
         "start": "node app.js"
         }
 }
+
+ENOENT: no such file or directory, open './public/pages/loginpage/login.html'

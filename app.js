@@ -32,12 +32,6 @@ function isAdmin(req){
 //Login
 const loginFailPage = renderPage("/errorpages/loginFail.html", {tabTitle:"Login Error", cssLink: "", tabTitleHeader:"NodeJS"});
 // NPM tabs:
-const projectSetupPage = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"});
-const projectSetupPageIsAdmin = renderPage("/setup_pages/projectSetup/projectSetup.html", {tabTitle: "Project setup", cssLink:"pages/setup_pages/projectSetup/projectSetup.css", tabTitleHeader:"Project Setup"},true);
-const terminalCommandsPage = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"});
-const terminalCommandsPageIsAdmin = renderPage("/setup_pages/terminalCommands/terminalCommands.html", {tabTitle: "Terminal Commands", cssLink:"", tabTitleHeader:"Terminal"},true);
-const toolsPage = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"pages/setup_pages/tools/tools.css", tabTitleHeader:"Tools"});
-const toolsPageIsAdmin = renderPage("/setup_pages/tools/tools.html", {tabTitle: "NPM tools", cssLink:"pages/setup_pages/tools/tools.css", tabTitleHeader:"Tools"},true);
 
 //Frontpage Page
 app.get("/",(req,res) => {
@@ -65,7 +59,7 @@ app.get("/login", (req,res) =>{
         pagename: "loginPage",
         messages: adminMessages.loginPage
     }
-    const loginPage = renderPage("/loginpage/login.html",options)
+    const loginPage = renderPage("/loginPage/login.html",options)
     res.send(loginPage);
 });
 
