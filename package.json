@@ -8,6 +8,6 @@
     },
     "scripts": {
         "start-dev": "cross-env PORT=8080 nodemon app.js --ext=html,js,json,css",
-        "start-prod": "node app.js"
+        "start": "node app.js"
         }
 }
